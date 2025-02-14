@@ -6,7 +6,6 @@ const productManager = new ProductManager();
 let products = await productManager.getProducts();
 
 router.get('/', (req, res) => {
-    
     let limit = parseInt(req.query.limit);
 
     if (!limit) {
@@ -29,8 +28,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     const newProduct = req.body;
     products.push({ id: products.length + 1, ...newProduct });
+
     productManager.createProduct( req.body );
-    
     res.status(201).json({ message: "Nuevo producto creado exitosamente" });
 })
 
@@ -38,8 +37,8 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     const productId = parseInt(req.params.id);
     const updatedProduct = req.body;
-    
     const productIndex = products.findIndex(product => product.id === productId);
+
     if (productIndex === -1) {
         return res.status(404).send({ status: "error", error: "User not found" });
     }
@@ -51,6 +50,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     const productId = parseInt(req.params.id);
     const productIndex = products.findIndex(product => product.id === productId);
+    
     if (productIndex === -1) {
         return res.status(404).send({ status: "error", error: "User not found" });
     }

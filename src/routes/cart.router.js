@@ -12,6 +12,7 @@ let products = await productManager.getProducts();
 router.get('/:id', (req, res) => {
     const cartId = parseInt(req.params.id);
     const cart = carts.find(cart => cart.id === cartId);
+
     if (!cart) {
         return res.status(404).send({ status: "error", error: "User not found" });
     }
@@ -23,8 +24,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     const newCart = req.body;
     carts.push({ id: carts.length + 1, ...newCart });
-    cartManager.createCart(req.body);
 
+    cartManager.createCart(req.body);
     res.status(201).json({ message: "Nuevo carrito creado exitosamente" });
 })
 
@@ -39,6 +40,7 @@ router.post('/:cid/product/:pid', (req, res) => {
     }
 
     const cartIndex = carts.findIndex(cart => cart.id === cartId);
+
     if (cartIndex === -1) {
         return res.status(404).send({ status: "error", error: "Carrito no encontrado" });
     }
@@ -58,13 +60,9 @@ router.post('/:cid/product/:pid', (req, res) => {
                 return contador;
             }, {})
         );
-        // console.log(carrito)
     }
 
-    // --------------------------------------------
-
-    cartManager.addProductsCart(carrito, cartIndex);
-
+    cartManager.addProductsCart(cartId, productId);
     res.status(201).json({ message: "Producto añadido al carrito exitosamente" });
 })
 
