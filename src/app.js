@@ -35,7 +35,7 @@ app.set('view engine', 'handlebars');
 const httpServer = app.listen(8080, () => console.log(`Listening on port 8080`));
 
 // Servidor de sockets
-const socketServer = new Server(httpServer);
+const io = new Server(httpServer);
 
 //Implementamos los routers que creamos
 app.use('/api/product', productRouter);
@@ -46,7 +46,7 @@ app.use('/', viewsRouter);
 app.use(express.static(__dirname + '/public'));
 
 
-socketServer.on('connection', socket => {
+io.on('connection', socket => {
     
     let productsHandlebars = [
         {
@@ -64,16 +64,16 @@ socketServer.on('connection', socket => {
         },
     ];
 
-    socketServer.emit("productos", productsHandlebars);
+    io.emit("productos", productsHandlebars);
 
     socket.on("nuevoProducto", productoNuevo => {
         productsHandlebars.push({ id: productsHandlebars.length + 1, ...productoNuevo });
-        socketServer.emit("productos", productsHandlebars);
+        io.emit("productos", productsHandlebars);
     });
 
     socket.on("eliminarProducto", id => {
         productsHandlebars = productsHandlebars.filter(producto => producto.id !== id);
-        socketServer.emit("productos", productsHandlebars);
+        io.emit("productos", productsHandlebars);
     });
 
 });

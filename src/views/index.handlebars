@@ -1,10 +1,10 @@
 <header>
         <div class="container hero">
             <div>
-                <h1>API REST MongoDB CRUD</h1>
-                <p>Sistema completo de gestión de datos con operaciones CRUD y MongoDB</p>
-                <a href="/realTimeProducts" class="btn">Comenzar</a>
-                <a href="#docs" class="btn">Documentación</a>
+                <h1>Proyecto Backend I Coderhouse</h1>
+                <p>Node JS / Express / MongoDB</p>
+                <a href="/realTimeProducts" class="btn">Alta de productos</a>
+                {{!-- <a href="#docs" class="btn">Documentación</a> --}}
             </div>
         </div>
     </header>
@@ -41,11 +41,14 @@
             <div class="code-block">
                 <code>
 // Crear un nuevo registro<br>
-POST /api/items<br>
+POST /api/product<br>
 {<br>
-&nbsp;&nbsp;"name": "Nuevo Item",<br>
-&nbsp;&nbsp;"description": "Descripción del item",<br>
-&nbsp;&nbsp;"price": 29.99<br>
+&nbsp;&nbsp;"title": "Nuevo producto",<br>
+&nbsp;&nbsp;"description": "Descripción del producto",<br>
+&nbsp;&nbsp;"code": 123<br>
+&nbsp;&nbsp;"price": 29999<br>
+&nbsp;&nbsp;"stock": 9,<br>
+&nbsp;&nbsp;"category": "Gamer",<br>
 }<br>
                 </code>
             </div>
@@ -64,23 +67,23 @@ POST /api/items<br>
                 <tbody>
                     <tr>
                         <td><span class="method get">GET</span></td>
-                        <td>/api/items</td>
-                        <td>Obtener todos los items</td>
+                        <td>/api/product</td>
+                        <td>Obtener todos los productos</td>
                     </tr>
                     <tr>
                         <td><span class="method post">POST</span></td>
-                        <td>/api/items</td>
-                        <td>Crear nuevo item</td>
+                        <td>/api/product</td>
+                        <td>Crear nuevo producto</td>
                     </tr>
                     <tr>
                         <td><span class="method put">PUT</span></td>
-                        <td>/api/items/:id</td>
-                        <td>Actualizar un item</td>
+                        <td>/api/product/:id</td>
+                        <td>Actualizar un producto</td>
                     </tr>
                     <tr>
                         <td><span class="method delete">DELETE</span></td>
-                        <td>/api/items/:id</td>
-                        <td>Eliminar un item</td>
+                        <td>/api/product/:id</td>
+                        <td>Eliminar un producto</td>
                     </tr>
                 </tbody>
             </table>

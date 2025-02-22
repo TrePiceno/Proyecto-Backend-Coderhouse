@@ -13,7 +13,7 @@ socket.on('productos', productsHandlebars => {
                         <div class="product-details">
                             <div>
                                 <div class="detail-label">Código:</div>
-                                <div class="detail-value">ABC123</div>
+                                <div class="detail-value">${producto.code}</div>
                             </div>
                             <div>
                                 <div class="detail-label">Precio:</div>
