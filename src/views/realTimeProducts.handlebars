@@ -1,0 +1,51 @@
+<div class="container">
+  <a href="/">Volver al inicio</a>
+        <div class="grid-container">
+            <div class="card">
+                <h1 class="title">Dar de alta un producto</h1>
+                <form id="formularioProductos">
+                    <div class="form-group">
+                        <label for="title">Título:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Descripción:</label>
+                        <input type="text" id="description" name="description" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="code">Código:</label>
+                        <input type="text" id="code" name="code" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Precio:</label>
+                        <input type="number" id="price" name="price" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stock">Stock:</label>
+                        <input type="number" id="stock" name="stock" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Categoría:</label>
+                        <input type="text" id="category" name="category" required>
+                    </div>
+
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+
+            <div>
+                <h2 class="title">Productos en tiempo real</h2>
+                <div id="productos" class="products-grid">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

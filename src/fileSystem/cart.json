@@ -38,6 +38,10 @@
     "arrayProducts": [
       {
         "productId": 1,
+        "cantidad": 4
+      },
+      {
+        "productId": 5,
         "cantidad": 3
       }
     ]

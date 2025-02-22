@@ -63,5 +63,18 @@
     "thumbnials": [
       "https://res.cloudinary.com/dt4230nrl/image/upload/v1726511157/LaptopHpGamer_sujpof.png"
     ]
+  },
+  {
+    "id": 6,
+    "title": "Laptop Gamer HP OMEN 16",
+    "description": "16.1 / Ryzen 9 7940HS / RTX 4070 / 16GB RAM / 512GB SSD / Shadow Black / 7N9X4UA#ABA",
+    "code": 123,
+    "price": 29999,
+    "status": true,
+    "stock": 9,
+    "category": "Gamer",
+    "thumbnials": [
+      "https://res.cloudinary.com/dt4230nrl/image/upload/v1726511157/LaptopHpGamer_sujpof.png"
+    ]
   }
 ]

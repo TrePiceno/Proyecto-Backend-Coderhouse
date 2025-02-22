@@ -1,9 +1,10 @@
 import fs from 'fs';
+import __dirname from '../utils.js';
 
 class ProductManager {
 
     constructor() {
-        this.filePath = './src/fileSystem/products.json';
+        this.filePath = __dirname + '/fileSystem/products.json';
     }
 
     async createProduct(product) {
@@ -26,6 +27,10 @@ class ProductManager {
             console.error("Error al leer los productos: ", error)
         }
     }
+
+    // Método que actualice el producto y pasarlo al product.router y lo modificque en el productt.json
+
+    // Método que elimine el producto y pasarlo al product.router y lo elimine del products.json
 }
 
 export default ProductManager;

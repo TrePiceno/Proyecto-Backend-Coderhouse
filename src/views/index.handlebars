@@ -1,0 +1,88 @@
+<header>
+        <div class="container hero">
+            <div>
+                <h1>API REST MongoDB CRUD</h1>
+                <p>Sistema completo de gestión de datos con operaciones CRUD y MongoDB</p>
+                <a href="/realTimeProducts" class="btn">Comenzar</a>
+                <a href="#docs" class="btn">Documentación</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="features" class="features">
+            <h2>Características Principales</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Create</h3>
+                    <p>Crea nuevos registros con validación de datos y manejo de errores integrado.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Read</h3>
+                    <p>Consulta datos con filtros avanzados y paginación optimizada.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Update</h3>
+                    <p>Actualiza registros existentes con validación y actualizaciones parciales.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗑️</div>
+                    <h3>Delete</h3>
+                    <p>Elimina registros de forma segura con confirmación y rollback.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="code-section">
+            <h2>Ejemplo de Uso</h2>
+            <div class="code-block">
+                <code>
+// Crear un nuevo registro<br>
+POST /api/items<br>
+{<br>
+&nbsp;&nbsp;"name": "Nuevo Item",<br>
+&nbsp;&nbsp;"description": "Descripción del item",<br>
+&nbsp;&nbsp;"price": 29.99<br>
+}<br>
+                </code>
+            </div>
+        </section>
+
+        <section class="endpoints">
+            <h2>Endpoints Disponibles</h2>
+            <table class="endpoint-table">
+                <thead>
+                    <tr>
+                        <th>Método</th>
+                        <th>Endpoint</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="method get">GET</span></td>
+                        <td>/api/items</td>
+                        <td>Obtener todos los items</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method post">POST</span></td>
+                        <td>/api/items</td>
+                        <td>Crear nuevo item</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method put">PUT</span></td>
+                        <td>/api/items/:id</td>
+                        <td>Actualizar un item</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method delete">DELETE</span></td>
+                        <td>/api/items/:id</td>
+                        <td>Eliminar un item</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>

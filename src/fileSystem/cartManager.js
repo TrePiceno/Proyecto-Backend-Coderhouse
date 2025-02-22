@@ -1,9 +1,10 @@
 import fs from 'fs';
+import __dirname from '../utils.js';
 
 class CartManager {
 
     constructor() {
-        this.filePath = './src/fileSystem/cart.json';
+        this.filePath = __dirname + '/fileSystem/cart.json';
     }
 
     async createCart(cart) {
@@ -11,7 +12,7 @@ class CartManager {
             let carts = await this.getCarts();
             carts.push({ id: carts.length + 1, ...cart });
             
-            await fs.promises.writeFile(this.filePath, JSON.stringify(carts, null, 2)); 
+            await fs.promises.writeFile(this.filePath, JSON.stringify(carts, null, 2));
             console.log("Carrito creado exitosamente");
         } catch (error) {
             console.error("Error al crear el carrito: ", error)
@@ -53,6 +54,8 @@ class CartManager {
             console.error("Error al añadir productos al carrito: ", error);
         }
     }
+
+    // Método que elimine el carrito y pasarlo al cart.router.También lo elimine del cart.json
 
 }
 
